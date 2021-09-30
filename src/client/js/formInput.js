@@ -2,7 +2,7 @@ const handleSumbit = (e) => {
     e.preventDefault();
     const inputField = document.querySelector('#url-input').value;
     const formdata = new FormData();
-    formdata.append("key", "");
+    formdata.append("key", key);
     formdata.append("txt", inputField);
     formdata.append("lang", 'en');
     
