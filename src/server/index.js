@@ -1,8 +1,7 @@
-const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config()
 
 
-const textapi = new myApi({   
+const textapi = new meaningcloud({   
     application_key: process.env.API_KEY
   });
 
