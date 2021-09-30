@@ -1,0 +1,27 @@
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 460px;
+    margin: 64px auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+    border-image: initial;
+    border-radius: 20px;
+    padding: 24px 48px;
+}
+
+input {
+    margin: 4px 0px 12px;
+}
+
+#submit-button {
+    width: 120px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+#form-results {
+    max-width: 558px;
+    margin: auto;
+}

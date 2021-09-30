@@ -1,0 +1,2 @@
+var Client;(()=>{"use strict";var e={r:e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}},t={};e.r(t);document.querySelector("#submit-button").addEventListener("click",(function(e){e.preventDefault(),console.log("I'm a test function")})),Client=t})();
+//# sourceMappingURL=main.js.map
