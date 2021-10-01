@@ -1,25 +1,14 @@
-const handleSumbit = (e) => {
-    e.preventDefault();
-    const inputField = document.querySelector('#url-input').value;
-    const formdata = new FormData();
-    formdata.append("key", key);
-    formdata.append("txt", inputField);
-    formdata.append("lang", 'en');
-    
-    const requestOptions = {
-      method: 'POST',
-      body: formdata,
-      redirect: 'follow'
-    };
-    
-    fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
-      .then(response => ({
-        status: response.status, 
-        body: response.json()
-      }))
-      .then(({ status, body }) => console.log(status, body))
-      .catch(error => console.log('error', error));
+const handleSubmit = async (event) => {
+  event.preventDefault()
+
+  const api_url = `/article`
+  const response = await fetch(api_url);
+  const json = await response.json();
+  console.log(json);
 }
 
-export { handleSumbit }
+export { handleSubmit }
+
+
+
 
