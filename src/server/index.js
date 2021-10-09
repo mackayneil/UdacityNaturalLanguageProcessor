@@ -4,7 +4,8 @@ const myApiKey = process.env.API_KEY;
 
 const path = require('path');
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
+const { response } = require('express');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 const app = express();
@@ -23,17 +24,19 @@ app.listen(8080, function () {
     console.log('Example app listening on port 8080!')
 })
 
+// Assigns the user input to a variable
+let userInput
+app.post('/api', (request, response) => { 
+    userInput = request.body.url;
+})
 
-
-
-
+// Makes the API request on the server side
 app.get('/article', async (request, response) => {
-    const url = "https://api.meaningcloud.com/sentiment-2.1",         
-          lang = "en";
+    const url = "https://api.meaningcloud.com/sentiment-2.1";
+    const api_url = `${url}?key=${myApiKey}&url=${userInput}&lang=en`;  
+   
+    const fetch_response = await fetch(api_url);
+    const json = await fetch_response.json();
+    response.json(json)
+})
 
-        const api_url = `${url}?key=${myApiKey}&txt=helloworld&lang=${lang}`;     
-    
-        const fetch_response = await fetch(api_url);
-        const json = await fetch_response.json();
-        response.json(json)
-    })
