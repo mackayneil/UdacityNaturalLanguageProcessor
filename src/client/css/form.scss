@@ -21,7 +21,12 @@ input {
     margin-left: auto;
 }
 
-#form-results {
-    max-width: 558px;
-    margin: auto;
+.warning {
+    color: red;
+    font-size: 12px;
+    margin: 0px;
+}
+
+.d-none {
+    display: none;
 }
