@@ -24,19 +24,15 @@ app.listen(8080, function () {
     console.log('Example app listening on port 8080!')
 })
 
-// Assigns the user input to a variable
-let userInput
-app.post('/api', (request, response) => { 
-    userInput = request.body.url;
-})
 
 // Makes the API request on the server side
-app.get('/article', async (request, response) => {
+app.post('/article', async(req, res) => {
     const url = "https://api.meaningcloud.com/sentiment-2.1";
-    const api_url = `${url}?key=${myApiKey}&url=${userInput}&lang=en`;  
-   
-    const fetch_response = await fetch(api_url);
-    const json = await fetch_response.json();
-    response.json(json)
-})
-
+    const response = await fetch(`${url}?key=${myApiKey}&url=${req.body.userInput}&lang=en`);
+    try {
+        const json = await response.json();
+        res.send(json);
+      } catch (error) {
+        console.log("error", error);
+      }
+});
