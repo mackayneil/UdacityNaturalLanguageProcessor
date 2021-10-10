@@ -1,6 +1,6 @@
-import { handleData } from "./displayData";
+import { handleData } from "./handleData";
 
-const handleSubmit = async (event) => {
+async function handleSubmit (event) {
   event.preventDefault()
   
   const userInput = document.querySelector("#url-input").value;
