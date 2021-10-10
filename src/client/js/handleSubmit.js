@@ -18,7 +18,6 @@ async function handleSubmit (event) {
     warning.classList.add('d-none');
     fetch('http://localhost:8080/article', {
             method: 'POST',
-            mode: 'cors',
             credentials: 'same-origin',           
             headers: {
                 'Content-Type': 'application/json',
